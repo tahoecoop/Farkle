@@ -7,8 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Player.h"
+#import "Turn.h"
+#import "Game.h"
+#import "Dice.h"
 
-@interface ViewController : UIViewController
+
+@interface PlayViewController : UIViewController
+
+@property Game *game;
+
 
 
 @end

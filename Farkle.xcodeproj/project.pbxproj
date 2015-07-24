@@ -9,11 +9,16 @@
 /* Begin PBXBuildFile section */
 		BA1AF8181B618711003D1847 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1AF8171B618711003D1847 /* main.m */; };
 		BA1AF81B1B618711003D1847 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1AF81A1B618711003D1847 /* AppDelegate.m */; };
-		BA1AF81E1B618711003D1847 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1AF81D1B618711003D1847 /* ViewController.m */; };
+		BA1AF81E1B618711003D1847 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1AF81D1B618711003D1847 /* PlayViewController.m */; };
 		BA1AF8211B618711003D1847 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA1AF81F1B618711003D1847 /* Main.storyboard */; };
 		BA1AF8231B618711003D1847 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA1AF8221B618711003D1847 /* Images.xcassets */; };
 		BA1AF8261B618711003D1847 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA1AF8241B618711003D1847 /* LaunchScreen.xib */; };
 		BA1AF8321B618711003D1847 /* FarkleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1AF8311B618711003D1847 /* FarkleTests.m */; };
+		BA1AF83D1B619109003D1847 /* Dice.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1AF83C1B619109003D1847 /* Dice.m */; };
+		BA1AF8401B61964E003D1847 /* Turn.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1AF83F1B61964E003D1847 /* Turn.m */; };
+		BA1AF8451B6198F4003D1847 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1AF8441B6198F4003D1847 /* Player.m */; };
+		BA1AF8481B619C8B003D1847 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1AF8471B619C8B003D1847 /* HomeViewController.m */; };
+		BA1AF84B1B61AD57003D1847 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1AF84A1B61AD57003D1847 /* Game.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,14 +37,24 @@
 		BA1AF8171B618711003D1847 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		BA1AF8191B618711003D1847 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BA1AF81A1B618711003D1847 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		BA1AF81C1B618711003D1847 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		BA1AF81D1B618711003D1847 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		BA1AF81C1B618711003D1847 /* PlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
+		BA1AF81D1B618711003D1847 /* PlayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
 		BA1AF8201B618711003D1847 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA1AF8221B618711003D1847 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BA1AF8251B618711003D1847 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		BA1AF82B1B618711003D1847 /* FarkleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FarkleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA1AF8301B618711003D1847 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA1AF8311B618711003D1847 /* FarkleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FarkleTests.m; sourceTree = "<group>"; };
+		BA1AF83B1B619109003D1847 /* Dice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Dice.h; sourceTree = "<group>"; };
+		BA1AF83C1B619109003D1847 /* Dice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dice.m; sourceTree = "<group>"; };
+		BA1AF83E1B61964E003D1847 /* Turn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Turn.h; sourceTree = "<group>"; };
+		BA1AF83F1B61964E003D1847 /* Turn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Turn.m; sourceTree = "<group>"; };
+		BA1AF8431B6198F4003D1847 /* Player.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Player.h; sourceTree = "<group>"; };
+		BA1AF8441B6198F4003D1847 /* Player.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Player.m; sourceTree = "<group>"; };
+		BA1AF8461B619C8B003D1847 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		BA1AF8471B619C8B003D1847 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		BA1AF8491B61AD57003D1847 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
+		BA1AF84A1B61AD57003D1847 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,13 +96,9 @@
 		BA1AF8141B618711003D1847 /* Farkle */ = {
 			isa = PBXGroup;
 			children = (
-				BA1AF8191B618711003D1847 /* AppDelegate.h */,
-				BA1AF81A1B618711003D1847 /* AppDelegate.m */,
-				BA1AF81C1B618711003D1847 /* ViewController.h */,
-				BA1AF81D1B618711003D1847 /* ViewController.m */,
+				BA1AF8421B61965B003D1847 /* ViewControllers */,
+				BA1AF8411B619654003D1847 /* Model */,
 				BA1AF81F1B618711003D1847 /* Main.storyboard */,
-				BA1AF8221B618711003D1847 /* Images.xcassets */,
-				BA1AF8241B618711003D1847 /* LaunchScreen.xib */,
 				BA1AF8151B618711003D1847 /* Supporting Files */,
 			);
 			path = Farkle;
@@ -96,6 +107,10 @@
 		BA1AF8151B618711003D1847 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				BA1AF8221B618711003D1847 /* Images.xcassets */,
+				BA1AF8241B618711003D1847 /* LaunchScreen.xib */,
+				BA1AF8191B618711003D1847 /* AppDelegate.h */,
+				BA1AF81A1B618711003D1847 /* AppDelegate.m */,
 				BA1AF8161B618711003D1847 /* Info.plist */,
 				BA1AF8171B618711003D1847 /* main.m */,
 			);
@@ -117,6 +132,32 @@
 				BA1AF8301B618711003D1847 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BA1AF8411B619654003D1847 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				BA1AF8491B61AD57003D1847 /* Game.h */,
+				BA1AF84A1B61AD57003D1847 /* Game.m */,
+				BA1AF83B1B619109003D1847 /* Dice.h */,
+				BA1AF83C1B619109003D1847 /* Dice.m */,
+				BA1AF83E1B61964E003D1847 /* Turn.h */,
+				BA1AF83F1B61964E003D1847 /* Turn.m */,
+				BA1AF8431B6198F4003D1847 /* Player.h */,
+				BA1AF8441B6198F4003D1847 /* Player.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		BA1AF8421B61965B003D1847 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				BA1AF8461B619C8B003D1847 /* HomeViewController.h */,
+				BA1AF8471B619C8B003D1847 /* HomeViewController.m */,
+				BA1AF81C1B618711003D1847 /* PlayViewController.h */,
+				BA1AF81D1B618711003D1847 /* PlayViewController.m */,
+			);
+			name = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,8 +260,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA1AF81E1B618711003D1847 /* ViewController.m in Sources */,
+				BA1AF8401B61964E003D1847 /* Turn.m in Sources */,
+				BA1AF81E1B618711003D1847 /* PlayViewController.m in Sources */,
 				BA1AF81B1B618711003D1847 /* AppDelegate.m in Sources */,
+				BA1AF84B1B61AD57003D1847 /* Game.m in Sources */,
+				BA1AF83D1B619109003D1847 /* Dice.m in Sources */,
+				BA1AF8451B6198F4003D1847 /* Player.m in Sources */,
+				BA1AF8481B619C8B003D1847 /* HomeViewController.m in Sources */,
 				BA1AF8181B618711003D1847 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -282,7 +328,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
