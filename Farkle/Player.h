@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Turn.h"
 
 @interface Player : NSObject
 
@@ -15,5 +16,7 @@
 @property (nonatomic, strong) NSMutableArray *turns;
 
 -(instancetype) initWithName:(NSString *)name;
+
+- (Turn *)currentTurn;
 
 @end

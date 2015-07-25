@@ -13,7 +13,9 @@
 
 @property (nonatomic) NSInteger provisionalScore;
 @property (nonatomic) NSArray *dice;
+@property (nonatomic) NSArray *pointsPayingArray;
 
 -(instancetype) initWithDice;
+-(NSInteger)evaluateSelectedDiceForPoints;
 
 @end

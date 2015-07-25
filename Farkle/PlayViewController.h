@@ -16,6 +16,7 @@
 @interface PlayViewController : UIViewController
 
 @property Game *game;
+@property Player *currentPlayer;
 
 
 

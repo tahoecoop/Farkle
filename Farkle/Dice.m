@@ -21,4 +21,9 @@
     return  self;
 }
 
+- (void)toggleUnderConsideration
+{
+    self.isUnderConsideration = !self.isUnderConsideration;
+}
+
 @end

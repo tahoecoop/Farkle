@@ -24,6 +24,7 @@
 
 
 
+
 @end
 
 @implementation PlayViewController
@@ -36,7 +37,10 @@
 
     NSArray *players = self.game.players;
     Player *firstPlayer = [players objectAtIndex:0];
+    self.currentPlayer = firstPlayer;
+
     Turn *turn = [firstPlayer.turns objectAtIndex:0];
+    
 
     [self updateDiceView:turn];
 
@@ -65,14 +69,37 @@
 
         label.text = [NSString stringWithFormat:@"%li", dice.value];
 
+        label.tag = i;
+        [label setUserInteractionEnabled:YES];
+
+        UITapGestureRecognizer *labelTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onLabelTap:)];
+        [label addGestureRecognizer:labelTap];
     }
 }
+
 
 -(void)setUpLabelArray
 {
     NSArray *arrayOfLabels = [[NSArray alloc] initWithObjects:self.dieOne, self.dieTwo, self.dieThree, self.dieFour, self.dieFive, self.dieSix, nil];
     self.arrayOfLabels = arrayOfLabels;
+
 }
+
+- (void)onLabelTap:(UIGestureRecognizer *)gesture
+{
+    UILabel *label = (UILabel *)gesture.view;
+    NSInteger *diceIndex = label.tag;
+    
+
+    Turn *turn = [self.currentPlayer currentTurn];
+    Dice *selectedDice = [turn.dice objectAtIndex:diceIndex];
+
+    NSLog(@"%li", selectedDice.value);
+    [selectedDice toggleUnderConsideration];
+    NSLog(@"%li", [turn evaluateSelectedDiceForPoints]);
+}
+
+
 
 
 @end

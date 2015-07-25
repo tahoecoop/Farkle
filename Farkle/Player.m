@@ -21,6 +21,11 @@
     return self;
 }
 
+- (Turn *)currentTurn
+{
+    return [self.turns objectAtIndex:(self.turns.count - 1)];
+}
+
 
 
 @end

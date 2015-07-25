@@ -13,7 +13,9 @@
 @property (nonatomic) NSInteger value;
 @property BOOL isLocked;
 @property (nonatomic, assign) NSInteger lockedOnRoll;
+@property BOOL isUnderConsideration;
 
 - (instancetype)initWithDefaults;
+- (void)toggleUnderConsideration;
 
 @end
