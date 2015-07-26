@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		BA1AF8181B618711003D1847 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1AF8171B618711003D1847 /* main.m */; };
 		BA1AF81B1B618711003D1847 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1AF81A1B618711003D1847 /* AppDelegate.m */; };
-		BA1AF81E1B618711003D1847 /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1AF81D1B618711003D1847 /* PlayViewController.m */; };
 		BA1AF8211B618711003D1847 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA1AF81F1B618711003D1847 /* Main.storyboard */; };
 		BA1AF8231B618711003D1847 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA1AF8221B618711003D1847 /* Images.xcassets */; };
 		BA1AF8261B618711003D1847 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = BA1AF8241B618711003D1847 /* LaunchScreen.xib */; };
@@ -19,6 +18,7 @@
 		BA1AF8451B6198F4003D1847 /* Player.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1AF8441B6198F4003D1847 /* Player.m */; };
 		BA1AF8481B619C8B003D1847 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1AF8471B619C8B003D1847 /* HomeViewController.m */; };
 		BA1AF84B1B61AD57003D1847 /* Game.m in Sources */ = {isa = PBXBuildFile; fileRef = BA1AF84A1B61AD57003D1847 /* Game.m */; };
+		BAD89A8C1B6439B600C248FF /* PlayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BAD89A8B1B6439B600C248FF /* PlayViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,7 +38,6 @@
 		BA1AF8191B618711003D1847 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		BA1AF81A1B618711003D1847 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		BA1AF81C1B618711003D1847 /* PlayViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PlayViewController.h; sourceTree = "<group>"; };
-		BA1AF81D1B618711003D1847 /* PlayViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
 		BA1AF8201B618711003D1847 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA1AF8221B618711003D1847 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		BA1AF8251B618711003D1847 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -55,6 +54,7 @@
 		BA1AF8471B619C8B003D1847 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		BA1AF8491B61AD57003D1847 /* Game.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Game.h; sourceTree = "<group>"; };
 		BA1AF84A1B61AD57003D1847 /* Game.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Game.m; sourceTree = "<group>"; };
+		BAD89A8B1B6439B600C248FF /* PlayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -155,7 +155,7 @@
 				BA1AF8461B619C8B003D1847 /* HomeViewController.h */,
 				BA1AF8471B619C8B003D1847 /* HomeViewController.m */,
 				BA1AF81C1B618711003D1847 /* PlayViewController.h */,
-				BA1AF81D1B618711003D1847 /* PlayViewController.m */,
+				BAD89A8B1B6439B600C248FF /* PlayViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -261,10 +261,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA1AF8401B61964E003D1847 /* Turn.m in Sources */,
-				BA1AF81E1B618711003D1847 /* PlayViewController.m in Sources */,
 				BA1AF81B1B618711003D1847 /* AppDelegate.m in Sources */,
 				BA1AF84B1B61AD57003D1847 /* Game.m in Sources */,
 				BA1AF83D1B619109003D1847 /* Dice.m in Sources */,
+				BAD89A8C1B6439B600C248FF /* PlayViewController.m in Sources */,
 				BA1AF8451B6198F4003D1847 /* Player.m in Sources */,
 				BA1AF8481B619C8B003D1847 /* HomeViewController.m in Sources */,
 				BA1AF8181B618711003D1847 /* main.m in Sources */,
@@ -462,6 +462,7 @@
 				BA1AF8371B618711003D1847 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BA1AF8381B618711003D1847 /* Build configuration list for PBXNativeTarget "FarkleTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +471,7 @@
 				BA1AF83A1B618711003D1847 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

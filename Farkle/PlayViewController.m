@@ -7,6 +7,7 @@
 //
 
 #import "PlayViewController.h"
+#import <QuartzCore/QuartzCore.h>
 
 @interface PlayViewController ()
 
@@ -21,7 +22,11 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *turnScoreLabel;
 @property (weak, nonatomic) IBOutlet UILabel *totalScoreLabel;
+@property NSMutableArray *arrayOfLabelOriginalPoints;
 
+@property (strong, nonatomic) UIDynamicAnimator *dynamicAnimator;
+@property (nonatomic) BOOL areLabelsFannedOut;
+@property (weak, nonatomic) IBOutlet UIButton *rollDiceButton;
 
 
 
@@ -41,20 +46,48 @@
 
     Turn *turn = [firstPlayer.turns objectAtIndex:0];
 
-    //access the turns dice and set the properties of the dice to set value
-    //create method that accepts a turn as a property and allows me to set the every dice to an arbitrary value. returns void
-
     [self setUpFakeDiceValues:turn];
-    
 
     [self updateDiceView:turn];
 
+    [self.rollDiceButton addTarget:self action:@selector(fanLabels:) forControlEvents:UIControlEventTouchUpInside];
+    self.dynamicAnimator = [[UIDynamicAnimator alloc] initWithReferenceView:self.view];
+
+    self.dieOne.layer.masksToBounds = YES;
+    self.dieOne.layer.cornerRadius = 10;
+    self.dieTwo.layer.masksToBounds = YES;
+    self.dieTwo.layer.cornerRadius = 10;
+    self.dieThree.layer.masksToBounds = YES;
+    self.dieThree.layer.cornerRadius = 10;
+    self.dieFour.layer.masksToBounds = YES;
+    self.dieFour.layer.cornerRadius = 10;
+    self.dieFive.layer.masksToBounds = YES;
+    self.dieFive.layer.cornerRadius = 10;
+    self.dieSix.layer.masksToBounds = YES;
+    self.dieSix.layer.cornerRadius = 10;
+
+    self.areLabelsFannedOut = YES;
+
+//    [self storeLabelOrigins];
 }
+
+//-(void)storeLabelOrigins {
+//    self.arrayOfLabelOriginalPoints = [[NSMutableArray alloc] init];
+//    for (UILabel* label in self.arrayOfLabels) {
+//        CGPoint origin = CGPointMake(label.frame.origin.x, label.frame.origin.y);
+//        [self.arrayOfLabelOriginalPoints addObject:[NSValue valueWithCGPoint:origin]];
+//    }
+//
+//}
 
 -(void)setUpFakeDiceValues:(Turn *)turn
 {
-    Dice *dice1 = [[Dice alloc] init];
-
+    ((Dice *)([turn.dice objectAtIndex:0])).value = 1;
+    ((Dice *)([turn.dice objectAtIndex:1])).value = 1;
+    ((Dice *)([turn.dice objectAtIndex:2])).value = 5;
+    ((Dice *)([turn.dice objectAtIndex:3])).value = 5;
+    ((Dice *)([turn.dice objectAtIndex:4])).value = 5;
+    ((Dice *)([turn.dice objectAtIndex:5])).value = 5;
 }
 
 - (IBAction)onDiceRollButtonPressed:(UIButton *)sender
@@ -110,7 +143,75 @@
     NSLog(@"FINAL SCORE****%li", [turn evaluateSelectedDiceForPoints]);
 }
 
+- (IBAction)onRollDiceButtonPressed:(UIButton *)sender
+{
+    
+}
 
+- (void)fanLabels:(UILabel *)sender
+{
+    [self.dynamicAnimator removeAllBehaviors];
+    if (self.areLabelsFannedOut)
+    {
+        [self fanIn];
+    }
+    else
+    {
+        [self fanOut];
+    }
+    self.areLabelsFannedOut = !self.areLabelsFannedOut;
+}
 
+-(void)fanIn
+{
+    UISnapBehavior *snapBehavior;
+    snapBehavior = [[UISnapBehavior alloc] initWithItem:self.dieOne snapToPoint:self.rollDiceButton.center];
+    [self.dynamicAnimator addBehavior:snapBehavior];
+
+    snapBehavior = [[UISnapBehavior alloc] initWithItem:self.dieTwo snapToPoint:self.rollDiceButton.center];
+    [self.dynamicAnimator addBehavior:snapBehavior];
+
+    snapBehavior = [[UISnapBehavior alloc] initWithItem:self.dieThree snapToPoint:self.rollDiceButton.center];
+    [self.dynamicAnimator addBehavior:snapBehavior];
+
+    snapBehavior = [[UISnapBehavior alloc] initWithItem:self.dieFour snapToPoint:self.rollDiceButton.center];
+    [self.dynamicAnimator addBehavior:snapBehavior];
+
+    snapBehavior = [[UISnapBehavior alloc] initWithItem:self.dieFive snapToPoint:self.rollDiceButton.center];
+    [self.dynamicAnimator addBehavior:snapBehavior];
+
+    snapBehavior = [[UISnapBehavior alloc] initWithItem:self.dieSix snapToPoint:self.rollDiceButton.center];
+    [self.dynamicAnimator addBehavior:snapBehavior];
+}
+
+-(void)fanOut
+{
+    CGPoint point;
+    UISnapBehavior *snapBehavior;
+
+    point = CGPointMake(self.rollDiceButton.frame.origin.x - (40 + arc4random() %30), self.rollDiceButton.frame.origin.y - (200 + arc4random() %30));
+    snapBehavior = [[UISnapBehavior alloc] initWithItem:self.dieOne snapToPoint:point];
+    [self.dynamicAnimator addBehavior:snapBehavior];
+
+    point = CGPointMake(self.rollDiceButton.frame.origin.x + (60 + arc4random() %30), self.rollDiceButton.frame.origin.y - (190 + arc4random() %30));
+    snapBehavior = [[UISnapBehavior alloc] initWithItem:self.dieTwo snapToPoint:point];
+    [self.dynamicAnimator addBehavior:snapBehavior];
+
+    point = CGPointMake(self.rollDiceButton.frame.origin.x + (190 + arc4random() %30), self.rollDiceButton.frame.origin.y - (200 + arc4random() %30));
+    snapBehavior = [[UISnapBehavior alloc] initWithItem:self.dieThree snapToPoint:point];
+    [self.dynamicAnimator addBehavior:snapBehavior];
+
+    point = CGPointMake(self.rollDiceButton.frame.origin.x - (40 + arc4random() %30), self.rollDiceButton.frame.origin.y - (60 + arc4random() %30));
+    snapBehavior = [[UISnapBehavior alloc] initWithItem:self.dieFour snapToPoint:point];
+    [self.dynamicAnimator addBehavior:snapBehavior];
+
+    point = CGPointMake(self.rollDiceButton.frame.origin.x + (60 + arc4random() %30), self.rollDiceButton.frame.origin.y - (60 + arc4random() %30));
+    snapBehavior = [[UISnapBehavior alloc] initWithItem:self.dieFive snapToPoint:point];
+    [self.dynamicAnimator addBehavior:snapBehavior];
+
+    point = CGPointMake(self.rollDiceButton.frame.origin.x + (190 + arc4random() %30), self.rollDiceButton.frame.origin.y - (60 + arc4random() %30));
+    snapBehavior = [[UISnapBehavior alloc] initWithItem:self.dieSix snapToPoint:point];
+    [self.dynamicAnimator addBehavior:snapBehavior];
+}
 
 @end
