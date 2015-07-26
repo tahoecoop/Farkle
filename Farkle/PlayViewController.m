@@ -71,6 +71,18 @@
     }
 }
 
+-(void)setUpLabelArray
+{
+    self.arrayOfLabels = [[NSMutableArray alloc] init];
+    for(int i = 0; i < 6; i++) {
+        CGRect labelRect = CGRectMake(150, 430, 75, 75);
+        UILabel *label = [[UILabel alloc] initWithFrame:labelRect];
+        label.layer.masksToBounds = YES;
+        label.layer.cornerRadius = 10;
+        [self.arrayOfLabels addObject:label];
+    }
+}
+
 -(void)updateDiceView:(Turn *)turn
 {
     for (int i = 0; i < 6; i++)
@@ -83,24 +95,11 @@
         label.tag = i;
         [label setUserInteractionEnabled:YES];
 
+        [self.view addSubview:label];
+        [self.view sendSubviewToBack:label];
         UITapGestureRecognizer *labelTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(onLabelTap:)];
         [label addGestureRecognizer:labelTap];
     }
-}
-
-
--(void)setUpLabelArray
-{
-    NSMutableArray *arrayOfLabels = [[NSMutableArray alloc] init];
-    for(int i = 0; i < 6; i++) {
-        CGRect labelRect = CGRectMake(self.rollDiceButton.frame.origin.x, self.rollDiceButton.frame.origin.y, 20, 20);
-        UILabel *label = [[UILabel alloc] initWithFrame:labelRect];
-        label.layer.masksToBounds = YES;
-        label.layer.cornerRadius = 10;
-        [self.arrayOfLabels addObject:label];
-    }
-    self.arrayOfLabels = arrayOfLabels;
-
 }
 
 - (void)onLabelTap:(UIGestureRecognizer *)gesture
@@ -158,40 +157,26 @@
     CGPoint point;
     UISnapBehavior *snapBehavior;
 
+    int bX = self.rollDiceButton.frame.origin.x;
+    int bY = self.rollDiceButton.frame.origin.y;
+
     NSArray *arrayOfSnapPoints = [[NSArray alloc] initWithObjects:
-        CGPointMake(self.rollDiceButton.frame.origin.x - (40 + arc4random() %30), self.rollDiceButton.frame.origin.y - (200 + arc4random() %30)),
-        CGPointMake(self.rollDiceButton.frame.origin.x + (60 + arc4random() %30), self.rollDiceButton.frame.origin.y - (190 + arc4random() %30)),
-        CGPointMake(self.rollDiceButton.frame.origin.x + (190 + arc4random() %30), self.rollDiceButton.frame.origin.y - (200 + arc4random() %30)),
-        CGPointMake(self.rollDiceButton.frame.origin.x - (40 + arc4random() %30), self.rollDiceButton.frame.origin.y - (60 + arc4random() %30)),
-        CGPointMake(self.rollDiceButton.frame.origin.x + (60 + arc4random() %30), self.rollDiceButton.frame.origin.y - (60 + arc4random() %30)),
-        CGPointMake(self.rollDiceButton.frame.origin.x + (190 + arc4random() %30), self.rollDiceButton.frame.origin.y - (60 + arc4random() %30)),
+        [NSValue valueWithCGPoint:CGPointMake(bX - (40 + arc4random() %30), bY - (200 + arc4random() %30))],
+        [NSValue valueWithCGPoint:CGPointMake(bX + (60 + arc4random() %30), bY - (190 + arc4random() %30))],
+        [NSValue valueWithCGPoint:CGPointMake(bX + (190 + arc4random() %30), bY - (200 + arc4random() %30))],
+        [NSValue valueWithCGPoint:CGPointMake(bX - (40 + arc4random() %30), bY - (60 + arc4random() %30))],
+        [NSValue valueWithCGPoint:CGPointMake(bX + (60 + arc4random() %30), bY - (60 + arc4random() %30))],
+        [NSValue valueWithCGPoint:CGPointMake(bX + (190 + arc4random() %30), bY - (60 + arc4random() %30))],
                                   nil];
 
-    nil
+    for (int i = 0; i < 6; i++) {
+        UILabel *label = self.arrayOfLabels[i];
+        NSValue *value = arrayOfSnapPoints[i];
 
-    point = ;
-    snapBehavior = [[UISnapBehavior alloc] initWithItem:self.dieOne snapToPoint:point];
-    [self.dynamicAnimator addBehavior:snapBehavior];
-
-    point = ;
-    snapBehavior = [[UISnapBehavior alloc] initWithItem:self.dieTwo snapToPoint:point];
-    [self.dynamicAnimator addBehavior:snapBehavior];
-
-    point = ;
-    snapBehavior = [[UISnapBehavior alloc] initWithItem:self.dieThree snapToPoint:point];
-    [self.dynamicAnimator addBehavior:snapBehavior];
-
-    point = ;
-    snapBehavior = [[UISnapBehavior alloc] initWithItem:self.dieFour snapToPoint:point];
-    [self.dynamicAnimator addBehavior:snapBehavior];
-
-    point =
-    snapBehavior = [[UISnapBehavior alloc] initWithItem:self.dieFive snapToPoint:point];
-    [self.dynamicAnimator addBehavior:snapBehavior];
-
-    point = ;
-    snapBehavior = [[UISnapBehavior alloc] initWithItem:self.dieSix snapToPoint:point];
-    [self.dynamicAnimator addBehavior:snapBehavior];
+        CGPoint point = value.CGPointValue;
+        snapBehavior = [[UISnapBehavior alloc] initWithItem:label snapToPoint: point];
+        [self.dynamicAnimator addBehavior:snapBehavior];
+    }
 }
 
 #pragma mark - testing methods
