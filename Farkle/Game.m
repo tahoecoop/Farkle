@@ -12,7 +12,8 @@
 
 -(instancetype) initWithPlayers:(NSArray *)players
 {
-    if (self = [super init]) {
+    if (self = [super init])
+    {
         _players = players;
         _winningScore = 10000;
     }

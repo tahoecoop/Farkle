@@ -40,9 +40,20 @@
     self.currentPlayer = firstPlayer;
 
     Turn *turn = [firstPlayer.turns objectAtIndex:0];
+
+    //access the turns dice and set the properties of the dice to set value
+    //create method that accepts a turn as a property and allows me to set the every dice to an arbitrary value. returns void
+
+    [self setUpFakeDiceValues:turn];
     
 
     [self updateDiceView:turn];
+
+}
+
+-(void)setUpFakeDiceValues:(Turn *)turn
+{
+    Dice *dice1 = [[Dice alloc] init];
 
 }
 
@@ -94,9 +105,9 @@
     Turn *turn = [self.currentPlayer currentTurn];
     Dice *selectedDice = [turn.dice objectAtIndex:diceIndex];
 
-    NSLog(@"%li", selectedDice.value);
+//    NSLog(@"%li", selectedDice.value);
     [selectedDice toggleUnderConsideration];
-    NSLog(@"%li", [turn evaluateSelectedDiceForPoints]);
+    NSLog(@"FINAL SCORE****%li", [turn evaluateSelectedDiceForPoints]);
 }
 
 
